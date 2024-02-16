@@ -15,7 +15,7 @@ public class WaypointGenerator : MonoBehaviour
     private List<GameObject> _waypoints = new List<GameObject>();
     public List<GameObject> Waypoints => _waypoints;
 
-    private void Awake()
+    private void Start()
     {
         CheckAndCreateContainer();
         GenerateWaypoints();
@@ -37,7 +37,6 @@ public class WaypointGenerator : MonoBehaviour
         if (_spline == null || _waypointPrefab == null || _numberOfWaypoints <= 0) return;
 
         float totalSplineLength = _spline.Length;
-
         float startGapDistance = _startGapPercentage * totalSplineLength;
         float endGapDistance = _endGapPercentage * totalSplineLength;
 
